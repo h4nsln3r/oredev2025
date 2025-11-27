@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Example1SpinnerDelay } from "./pages/Example1SpinnerDelay";
-import { Example2QueryWithSpinnerDelay } from "./pages/Example2QueryWithSpinnerDelay";
-import { Example3InitialDataStaleTime } from "./pages/Example3InitialDataStaleTime";
+import { Example3SkeletonScreens } from "./pages/Example3SkeletonScreens";
 import { Example4Optimistic } from "./pages/Example4Optimistic";
 import { Example5FastVsSlow } from "./pages/Example5FastVsSlow";
 
@@ -19,15 +18,15 @@ export const Router: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case "example1":
-        return <Example1SpinnerDelay />;
+        return <Example5FastVsSlow />;
       case "example2":
-        return <Example2QueryWithSpinnerDelay />;
+        return <Example5FastVsSlow />;
       case "example3":
-        return <Example3InitialDataStaleTime />;
+        return <Example3SkeletonScreens />;
       case "example4":
         return <Example4Optimistic />;
       case "example5":
-        return <Example5FastVsSlow />;
+        return <Example1SpinnerDelay />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
@@ -96,6 +95,18 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
       <div style={styles.exampleGrid}>
         <ExampleCard
           title="Example 1"
+          subtitle="Fast vs Slow Spinners"
+          description="Visual comparison of spinner timing impact"
+          points={[
+            "Side-by-side comparison",
+            "Perceived performance",
+            "User psychology",
+          ]}
+          onClick={() => onNavigate("example1")}
+          color="#6f42c1"
+        />
+        <ExampleCard
+          title="Example 2"
           subtitle="Delay Spinners by ~300ms"
           description="Avoid 'instant slowness' by delaying loading indicators"
           points={[
@@ -103,31 +114,18 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
             "No spinner for fast loads",
             "Smooth appearance if needed",
           ]}
-          onClick={() => onNavigate("example1")}
+          onClick={() => onNavigate("example5")}
           color="#007bff"
         />
 
         <ExampleCard
-          title="Example 2"
-          subtitle="useQuery with Spinner Delay"
-          description="React Query pattern with intelligent loading state"
-          points={[
-            "Combine React Query benefits",
-            "Delayed loading indicator",
-            "Clean abstraction",
-          ]}
-          onClick={() => onNavigate("example2")}
-          color="#28a745"
-        />
-
-        <ExampleCard
           title="Example 3"
-          subtitle="initialData & staleTime"
-          description="Show instant data while refreshing in background"
+          subtitle="Skeleton Screens"
+          description="Grey placeholders that reduce uncertainty while content loads"
           points={[
-            "Instant display with initialData",
-            "Background refresh",
-            "2-minute cache with staleTime",
+            "Reduce uncertainty",
+            "Preserve layout stability",
+            "Communicate 'loading' calmly",
           ]}
           onClick={() => onNavigate("example3")}
           color="#ff6b6b"
@@ -144,19 +142,6 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
           ]}
           onClick={() => onNavigate("example4")}
           color="#ffc107"
-        />
-
-        <ExampleCard
-          title="Example 5"
-          subtitle="Fast vs Slow Spinners"
-          description="Visual comparison of spinner timing impact"
-          points={[
-            "Side-by-side comparison",
-            "Perceived performance",
-            "User psychology",
-          ]}
-          onClick={() => onNavigate("example5")}
-          color="#6f42c1"
         />
       </div>
     </div>

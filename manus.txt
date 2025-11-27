@@ -1,0 +1,79 @@
+https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy83YTVjNDhkN2MxZGU1YmE0L0VUMnFNZFZkRzRwR3FlMkd5cWYzdy1VQnU5eDdKOXh3WGdOdzlBV2NfTHRMV1E%5FZT1ld0ZyMUQ&cid=7A5C48D7C1DE5BA4&id=7A5C48D7C1DE5BA4%21sd531aa3d1b5d468aa9ed86caa7f7c3e5&parId=7A5C48D7C1DE5BA4%21s1ea2152420f04b268d67ec33b59d47f0&o=OneUp
+https://trungvose.notion.site/oredev25-css
+https://trungvose.com/talks/2025-11-06-oredev-css/
+https://oredev.org/program
+
+🎤 Updated Introduction (Your requested beginning, polished and professional)
+
+“Öredev was a great experience.
+You really got inspired by listening to talented speakers who clearly knew their craft and also incredibly good at presenting.
+You could tell they’d done this many times before.
+
+One thing I really enjoyed about the conference was the structure of many topics.
+Beside from the key topics notes every day, Every hour you had different tracks to choose from, 
+so you could basically design your own day depending on what you were curious about.
+Me and Johanna mostly went to the same sessions, usually the ones focused on web development.
+
+But I also went to two AI-related talks.
+Both of them were completely packed with people — in one of them I actually had to stand in the back because there were no seats left.
+It was very clear that AI was the popular topic this year and even several of the morning keynotes focused on AI, so the theme was definitely strong.
+
+One of the AI talks I attended was called
+‘Code Rot at Machine Speed: Preventing AI-Induced Technical Debt’.
+And this one felt especially relevant, because these days we’re all using AI more and more.
+
+“The core idea of the talk was this:
+
+Generating code is the easy part — understanding it is hard.
+
+AI accelerates development, which is great.
+But it also accelerates complexity.
+Suddenly the codebase grows faster than humans can keep track of it, and you end up with large amounts of code that… no one truly understands anymore.
+
+It’s fast — but it’s fragile.
+
+The talk explored how to get the benefits of AI without drowning in technical debt.
+It covered recent AI research and strategies for enforcing human-readable, maintainable code, using automated reviews and AI guardrails in the IDE.
+
+Everything was demonstrated on real-world codebases, showing how tools like GitHub Copilot or Cursor can be amazing —
+but also how they can silently create tomorrow’s legacy code if we’re not careful.”**
+
+🎯 Your Action Points (full professional script)
+✅ 1. Use AI as a tool, not an architect
+
+“One of the key messages was: AI should assist — not design your whole system.
+If we let AI make architectural decisions, we lose the long-term structure and consistency that real maintainability depends on.
+Humans still need to set the direction, design the patterns, and define how the system should evolve.”
+
+✅ 2. Keep human review as the final decision-maker
+
+“Another important point was that no AI-generated code should ever be merged without human understanding.
+Not just approval — actual understanding.
+Because if you don’t know what the AI wrote today, you’re definitely not going to understand it six months from now when it breaks.”
+
+✅ 3. Adopt Machine Checkpoints (MCP) for automated code health
+
+“The talk introduced something called Machine Checkpoints, or MCP.
+It’s basically automated code health scanning that continuously checks for:
+
+structural drift
+
+inconsistent patterns
+
+complexity hotspots
+
+risky dependencies
+
+It’s like running technical debt prevention in the background at all times.”
+
+✅ 4. Align with DORA Metrics to measure long-term engineering health
+
+“Another important takeaway was the reminder that speed isn't everything.
+The talk emphasized using DORA metrics to measure true engineering health over time — not just short-term velocity.
+Metrics like deployment frequency, lead time, change failure rate, and MTTR give a much clearer picture of whether AI is actually improving our workflow or quietly making things more fragile.”
+
+✅ 5. Use an AI-aware editor like Cursor for full project context
+
+“And finally, the speaker showed how tools like Cursor — and the new AI capabilities coming into VS Code — can work with full-project context instead of just one file at a time.
+This allows the AI to understand the architecture, patterns, and naming conventions of the entire codebase.
+The result is code that fits naturally into the system, instead of isolated fragments that feel disconnected or inconsistent.”
