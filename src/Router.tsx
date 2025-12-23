@@ -1,31 +1,25 @@
-import React, { useState } from "react";
-import { Example1SpinnerDelay } from "./pages/Example1SpinnerDelay";
-import { Example3SkeletonScreens } from "./pages/Example3SkeletonScreens";
-import { Example4Optimistic } from "./pages/Example4Optimistic";
-import { Example5FastVsSlow } from "./pages/Example5FastVsSlow";
+import React, { useState } from 'react';
+import { Example1SpinnerDelay } from './pages/Example1SpinnerDelay';
+import { Example3SkeletonScreens } from './pages/Example3SkeletonScreens';
+import { Example4Optimistic } from './pages/Example4Optimistic';
+import { Example5FastVsSlow } from './pages/Example5FastVsSlow';
 
-type Page =
-  | "home"
-  | "example1"
-  | "example2"
-  | "example3"
-  | "example4"
-  | "example5";
+type Page = 'home' | 'example1' | 'example2' | 'example3' | 'example4' | 'example5';
 
 export const Router: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+  const [currentPage, setCurrentPage] = useState<Page>('home');
 
   const renderPage = () => {
     switch (currentPage) {
-      case "example1":
+      case 'example1':
         return <Example5FastVsSlow />;
-      case "example2":
+      case 'example2':
         return <Example5FastVsSlow />;
-      case "example3":
+      case 'example3':
         return <Example3SkeletonScreens />;
-      case "example4":
+      case 'example4':
         return <Example4Optimistic />;
-      case "example5":
+      case 'example5':
         return <Example1SpinnerDelay />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
@@ -36,16 +30,16 @@ export const Router: React.FC = () => {
     <div style={styles.app}>
       <nav style={styles.nav}>
         <button
-          onClick={() => setCurrentPage("home")}
+          onClick={() => setCurrentPage('home')}
           style={{
             ...styles.navButton,
-            backgroundColor: currentPage === "home" ? "#333" : "transparent",
-            color: currentPage === "home" ? "white" : "#666",
+            backgroundColor: currentPage === 'home' ? '#333' : 'transparent',
+            color: currentPage === 'home' ? 'white' : '#666',
           }}
         >
           ← Back Home
         </button>
-        <h1 style={{ flex: 1, margin: 0, paddingLeft: "1rem" }}>
+        <h1 style={{ flex: 1, margin: 0, paddingLeft: '1rem' }}>
           ⚡ Creating Fast-Feeling Web Apps - Öredev 2025
         </h1>
       </nav>
@@ -55,9 +49,7 @@ export const Router: React.FC = () => {
   );
 };
 
-const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
-  onNavigate,
-}) => (
+const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
   <div style={styles.homeContainer}>
     <div style={styles.hero}>
       <h1>Creating Fast-Feeling Web Apps</h1>
@@ -97,12 +89,8 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
           title="Example 1"
           subtitle="Fast vs Slow Spinners"
           description="Visual comparison of spinner timing impact"
-          points={[
-            "Side-by-side comparison",
-            "Perceived performance",
-            "User psychology",
-          ]}
-          onClick={() => onNavigate("example1")}
+          points={['Side-by-side comparison', 'Perceived performance', 'User psychology']}
+          onClick={() => onNavigate('example1')}
           color="#6f42c1"
         />
         <ExampleCard
@@ -110,11 +98,11 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
           subtitle="Delay Spinners by ~300ms"
           description="Avoid 'instant slowness' by delaying loading indicators"
           points={[
-            "Delay spinners by ~300ms",
-            "No spinner for fast loads",
-            "Smooth appearance if needed",
+            'Delay spinners by ~300ms',
+            'No spinner for fast loads',
+            'Smooth appearance if needed',
           ]}
-          onClick={() => onNavigate("example5")}
+          onClick={() => onNavigate('example5')}
           color="#007bff"
         />
 
@@ -123,25 +111,12 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
           subtitle="Skeleton Screens"
           description="Grey placeholders that reduce uncertainty while content loads"
           points={[
-            "Reduce uncertainty",
-            "Preserve layout stability",
+            'Reduce uncertainty',
+            'Preserve layout stability',
             "Communicate 'loading' calmly",
           ]}
-          onClick={() => onNavigate("example3")}
+          onClick={() => onNavigate('example3')}
           color="#ff6b6b"
-        />
-
-        <ExampleCard
-          title="Example 4"
-          subtitle="Optimistic Updates"
-          description="Update UI immediately, sync with server later"
-          points={[
-            "Instant UI feedback",
-            "Background sync",
-            "Automatic rollback on error",
-          ]}
-          onClick={() => onNavigate("example4")}
-          color="#ffc107"
         />
       </div>
     </div>
@@ -159,8 +134,8 @@ const HomePage: React.FC<{ onNavigate: (page: Page) => void }> = ({
 
     <div style={styles.footer}>
       <p>
-        💡 Pro tip: Test each example and pay attention to how the UI{" "}
-        <em>feels</em>, not just how fast it is!
+        💡 Pro tip: Test each example and pay attention to how the UI <em>feels</em>, not just how
+        fast it is!
       </p>
     </div>
   </div>
@@ -182,10 +157,10 @@ const ExampleCard: React.FC<{
     }}
   >
     <div style={{ ...styles.exampleCardHeader, backgroundColor: color }}>
-      <span style={{ fontSize: "1.5rem" }}>{title}</span>
+      <span style={{ fontSize: '1.5rem' }}>{title}</span>
     </div>
-    <h3 style={{ marginTop: "1rem", marginBottom: "0.5rem" }}>{subtitle}</h3>
-    <p style={{ color: "#666", marginBottom: "1rem" }}>{description}</p>
+    <h3 style={{ marginTop: '1rem', marginBottom: '0.5rem' }}>{subtitle}</h3>
+    <p style={{ color: '#666', marginBottom: '1rem' }}>{description}</p>
     <ul style={styles.cardPoints}>
       {points.map((point, i) => (
         <li key={i}>{point}</li>
@@ -205,121 +180,121 @@ const ExampleCard: React.FC<{
 
 const styles: Record<string, React.CSSProperties> = {
   app: {
-    minHeight: "100vh",
-    backgroundColor: "#fafafa",
+    minHeight: '100vh',
+    backgroundColor: '#fafafa',
   },
   nav: {
-    display: "flex",
-    alignItems: "center",
-    backgroundColor: "white",
-    padding: "1rem 2rem",
-    borderBottom: "1px solid #ddd",
-    gap: "1rem",
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    padding: '1rem 2rem',
+    borderBottom: '1px solid #ddd',
+    gap: '1rem',
   },
   navButton: {
-    padding: "0.5rem 1rem",
-    border: "none",
-    borderRadius: "4px",
-    cursor: "pointer",
-    fontSize: "0.95rem",
-    fontWeight: "bold",
-    transition: "all 0.2s",
+    padding: '0.5rem 1rem',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontSize: '0.95rem',
+    fontWeight: 'bold',
+    transition: 'all 0.2s',
   },
   content: {
-    padding: "2rem",
+    padding: '2rem',
   },
   homeContainer: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    fontFamily: "system-ui, -apple-system, sans-serif",
+    maxWidth: '1200px',
+    margin: '0 auto',
+    fontFamily: 'system-ui, -apple-system, sans-serif',
   },
   hero: {
-    textAlign: "center",
-    paddingBottom: "2rem",
-    borderBottom: "2px solid #007bff",
-    marginBottom: "2rem",
+    textAlign: 'center',
+    paddingBottom: '2rem',
+    borderBottom: '2px solid #007bff',
+    marginBottom: '2rem',
   },
   intro: {
-    marginBottom: "3rem",
+    marginBottom: '3rem',
   },
   principleGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-    gap: "1.5rem",
-    marginTop: "1.5rem",
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gap: '1.5rem',
+    marginTop: '1.5rem',
   },
   principle: {
-    backgroundColor: "white",
-    padding: "1.5rem",
-    borderRadius: "8px",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-    textAlign: "center",
+    backgroundColor: 'white',
+    padding: '1.5rem',
+    borderRadius: '8px',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+    textAlign: 'center',
   },
   principleIcon: {
-    fontSize: "2.5rem",
-    marginBottom: "0.5rem",
+    fontSize: '2.5rem',
+    marginBottom: '0.5rem',
   },
   examples: {
-    marginBottom: "3rem",
+    marginBottom: '3rem',
   },
   exampleGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-    gap: "1.5rem",
-    marginTop: "1.5rem",
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '1.5rem',
+    marginTop: '1.5rem',
   },
   exampleCard: {
-    backgroundColor: "white",
-    borderRadius: "8px",
-    borderLeft: "4px solid",
-    padding: "1.5rem",
-    cursor: "pointer",
-    transition: "all 0.3s",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+    backgroundColor: 'white',
+    borderRadius: '8px',
+    borderLeft: '4px solid',
+    padding: '1.5rem',
+    cursor: 'pointer',
+    transition: 'all 0.3s',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
   },
   exampleCardHeader: {
-    color: "white",
-    padding: "1rem",
-    borderRadius: "4px",
-    marginBottom: "1rem",
-    marginLeft: "-1.5rem",
-    marginRight: "-1.5rem",
-    marginTop: "-1.5rem",
-    paddingLeft: "1.5rem",
+    color: 'white',
+    padding: '1rem',
+    borderRadius: '4px',
+    marginBottom: '1rem',
+    marginLeft: '-1.5rem',
+    marginRight: '-1.5rem',
+    marginTop: '-1.5rem',
+    paddingLeft: '1.5rem',
   },
   cardPoints: {
-    listStyle: "none",
+    listStyle: 'none',
     padding: 0,
-    margin: "1rem 0",
-    fontSize: "0.9rem",
+    margin: '1rem 0',
+    fontSize: '0.9rem',
   },
   exploreButton: {
-    width: "100%",
-    padding: "0.75rem",
-    border: "none",
-    borderRadius: "4px",
-    color: "white",
-    cursor: "pointer",
-    fontWeight: "bold",
-    marginTop: "1rem",
-    transition: "all 0.2s",
+    width: '100%',
+    padding: '0.75rem',
+    border: 'none',
+    borderRadius: '4px',
+    color: 'white',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    marginTop: '1rem',
+    transition: 'all 0.2s',
   },
   actionItems: {
-    backgroundColor: "#e8f5e9",
-    padding: "2rem",
-    borderRadius: "8px",
-    borderLeft: "4px solid #28a745",
-    marginBottom: "2rem",
+    backgroundColor: '#e8f5e9',
+    padding: '2rem',
+    borderRadius: '8px',
+    borderLeft: '4px solid #28a745',
+    marginBottom: '2rem',
   },
   actionList: {
-    listStyle: "none",
+    listStyle: 'none',
     padding: 0,
-    marginTop: "1rem",
+    marginTop: '1rem',
   },
   footer: {
-    textAlign: "center",
-    padding: "2rem",
-    color: "#666",
-    borderTop: "1px solid #ddd",
+    textAlign: 'center',
+    padding: '2rem',
+    color: '#666',
+    borderTop: '1px solid #ddd',
   },
 };
